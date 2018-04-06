@@ -1,27 +1,33 @@
 <template>
   <div id="app">
-    <div class="banner">
-      <img
-        src="https://vuejs.org/images/logo.png"
-        width="100"
-        alt="vue"
-        class="logo"
-      />
-      <h1>Welcome to Vue.js</h1>
-    </div>
-    <div class="bottom">
-      To get started, edit <code>./src/components/App.vue</code> and save to reload.<br/>
-      <span class="fade">
-        Checkout <code>./README.md</code> for more usages.
-      </span>
-    </div>
+    Cute animals!
+	<div>
+		<cute-animal v-for="url in urlList" v-bind:url="url" v-bind:key="url" />
+	</div>
+
+
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'app'
-  }
+import CuteAnimal from './CuteAnimal.vue';
+
+export default {
+	name: 'app',
+	components: {
+		'cute-animal': CuteAnimal
+	},
+	data: function() {
+		return {
+			urlList: [
+				'https://i.ytimg.com/vi/J0EUxEkm4kc/maxresdefault.jpg',
+				'https://i.pinimg.com/736x/78/b8/a5/78b8a51098ef44932f2c459e23861b61.jpg',
+				'https://i.ytimg.com/vi/M9fv8aFhyXU/maxresdefault.jpg',
+				'https://img.buzzfeed.com/buzzfeed-static/static/2014-11/5/13/enhanced/webdr07/enhanced-5913-1415212088-2.jpg?downsize=715:*&output-format=auto&output-quality=auto'
+			]
+		};
+	}
+}
 </script>
 
 <!-- CSS libraries -->
@@ -53,29 +59,7 @@
     font-weight: 300;
     margin: 0;
   }
-
-  .banner {
-    height: 200px;
-    background-color: #f6f6f6;
-    padding: 50px 10px;
-  }
-
-  .bottom {
-    padding: 80px 10px;
-    font-size: 24px;
-    font-weight: 300;
-  }
-
-  .fade {
-    font-size: 14px;
-  }
-
-  .logo {
-    animation: spin 4s 1s infinite linear
-  }
-
-  @keyframes spin {
-    from {transform:rotate(0deg);}
-    to {transform:rotate(360deg);}
+  div {
+	  background-color: hotpink;
   }
 </style>
