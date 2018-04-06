@@ -13,9 +13,10 @@ export default {
 <style scoped>
 div {
 	background-color: white;
+	display: inline-block;
 }
 img {
-	width: 200px;
+	width: 140px;
 	height: auto;
 }
 </style>

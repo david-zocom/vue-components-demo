@@ -4,18 +4,19 @@
 	<div>
 		<cute-animal v-for="url in urlList" v-bind:url="url" v-bind:key="url" />
 	</div>
-
-
+	<add-image v-on:adding-image="addImageToList" />
   </div>
 </template>
 
 <script>
 import CuteAnimal from './CuteAnimal.vue';
+import AddImage from './AddImage.vue';
 
 export default {
 	name: 'app',
 	components: {
-		'cute-animal': CuteAnimal
+		'cute-animal': CuteAnimal,
+		'add-image': AddImage
 	},
 	data: function() {
 		return {
@@ -26,6 +27,12 @@ export default {
 				'https://img.buzzfeed.com/buzzfeed-static/static/2014-11/5/13/enhanced/webdr07/enhanced-5913-1415212088-2.jpg?downsize=715:*&output-format=auto&output-quality=auto'
 			]
 		};
+	},  // data
+	methods: {
+		addImageToList: function(imageUrl) {
+			console.log('addImageToList', imageUrl);
+			this.urlList.push(imageUrl);
+		}
 	}
 }
 </script>
