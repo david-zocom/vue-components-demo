@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "vuecomponentdemo",
-  "productName": "vuecomponentdemo",
+  "productName": "Vue component demo",
   "description": "My kickass Vue project",
   "version": "0.0.0",
   "license": "MIT",
